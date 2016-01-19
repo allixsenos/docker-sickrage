@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER tim@haak.co
+MAINTAINER docker@allixsenos.net
 
 ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
@@ -12,7 +12,7 @@ RUN apk -U upgrade && \
         make gcc g++ python-dev openssl-dev libffi-dev unrar \
         && \
     pip --no-cache-dir install pyopenssl cheetah && \
-    git clone --depth 1 http://github.com/SiCKRAGETV/SickRage /sickrage && \
+    git clone --depth 1 http://github.com/SickRage/SickRage /sickrage && \
     apk del make gcc g++ python-dev && \
     rm -rf /tmp && \
     rm -rf /var/cache/apk/*
